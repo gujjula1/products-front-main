@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh'''
-                    echo "Building docker image..."
+                    echo "Buildingg docker image..."
                     docker build -t products-frontend:v1 .
                     docker tag products-frontend:v1 gujjula1/jenkins-products-frontend:v$BUILD_NUMBER
                 '''
