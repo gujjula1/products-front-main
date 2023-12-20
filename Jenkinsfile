@@ -19,6 +19,14 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh'''
+                    echo "Deploying into new server"
+                    ssh ubuntu@13.235.238.103 docker service update --image gujjula1/jenkins-products-frontend:v$BUILD_NUMBER products_frontend
+                '''
+            }
+    }
         
 }
 }
